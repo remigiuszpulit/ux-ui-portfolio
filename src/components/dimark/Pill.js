@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Pill({ opacity, text }) {
-  const color = `rgba(255, 64, 0, ${opacity})`;
-
+function Pill({ color, text }) {
   return (
     <Box style={{ background: color }}>
       <Text>{text}</Text>

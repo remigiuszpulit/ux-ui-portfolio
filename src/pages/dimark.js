@@ -89,11 +89,14 @@ function Dimark() {
       </FlexContainer>
       <CenterContainer>
         <FlexWrapContainer>
-          <Pill opacity={0.26} text={"Discovery & Empathize"} />
-          <Pill opacity={0.36} text={"Define"} />
-          <Pill opacity={0.46} text={"Ideate"} />
-          <Pill opacity={0.56} text={"Prototyping"} />
-          <Pill opacity={0.66} text={"Develop"} />
+          <Pill
+            color={"rgba(255, 64, 0, 0.26)"}
+            text={"Discovery & Empathize"}
+          />
+          <Pill color={"rgba(255, 64, 0, 0.36)"} text={"Define"} />
+          <Pill color={"rgba(255, 64, 0, 0.46)"} text={"Ideate"} />
+          <Pill color={"rgba(255, 64, 0, 0.56)"} text={"Prototyping"} />
+          <Pill color={"rgba(255, 64, 0, 0.66)"} text={"Develop"} />
         </FlexWrapContainer>
       </CenterContainer>
       <Heading2
@@ -443,11 +446,13 @@ const FlexDateToolsContainer = styled.div`
   flex-direction: row;
   padding-top: 20px;
   padding-bottom: 0px;
+  width: 80%;
   justify-content: space-between;
   gap: 40px;
   @media (min-width: 992px) {
     flex-direction: column;
     justify-content: center;
+    width: auto;
     gap: 0px;
     padding: 0px;
   }

@@ -6,7 +6,6 @@ import GoldPlace from "../static/GoldPlace.png";
 import DimarkCover from "../static/DimarkCover.png";
 import Background from "../static/Background.png";
 import Card from "../components/Card";
-import { Link } from "react-router-dom";
 
 function Index(props) {
   const roles = [
@@ -35,19 +34,19 @@ function Index(props) {
           </HeroText>
         </Head>
         <CardsContainer>
-          <StyledLink to={"/dimarkit"}>
-            <Card
-              img={DimarkCover}
-              head={"Dimark"}
-              text={
-                "Dimark specializes in designing, production, installing, launching and  maintaining baggage handling systems and intralogistics solutions."
-              }
-            />
-          </StyledLink>
+          <Card
+            img={DimarkCover}
+            head={"Dimark"}
+            to={"/dimarkit"}
+            text={
+              "Dimark specializes in designing, production, installing, launching and  maintaining baggage handling systems and intralogistics solutions."
+            }
+          />
 
           <Card
             img={GoldPlace}
             head={"Gold Place"}
+            to={"/goldplace"}
             text={
               "The company enables entrepreneurs to lower their administrative costs and run the business more efficiently."
             }
@@ -112,8 +111,4 @@ const HeroText = styled.h2`
 
 const Text = styled.p`
   margin: unset;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
 `;
