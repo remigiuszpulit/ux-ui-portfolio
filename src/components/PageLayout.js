@@ -26,6 +26,9 @@ const Page = styled.div`
 
 const Container = styled.div`
   width: 73%;
+  @media (min-width: 992px) {
+    width: 53%;
+  }
   padding-top: 40px;
   padding-bottom: 100px;
 `;

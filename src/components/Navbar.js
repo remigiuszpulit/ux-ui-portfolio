@@ -117,6 +117,7 @@ const ResumeButtonText = styled.h4`
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+
   /* identical to box height */
 
   text-transform: uppercase;
