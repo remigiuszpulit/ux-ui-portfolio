@@ -435,6 +435,8 @@ const FlexWrapContainer = styled.div`
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
+
   @media (min-width: 992px) {
     gap: 52px;
     justify-content: flex-start;

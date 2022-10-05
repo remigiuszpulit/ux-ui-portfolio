@@ -4,7 +4,7 @@ import BackgroundLight from "../static/BackgroundLight.png";
 import PageHead from "../components/PageHead";
 import Footer from "./Footer";
 
-function PageLayout({ color, logo, head, par, children }) {
+const PageLayout = ({ color, logo, head, par, children }) => {
   const ref = useRef(null);
   return (
     <>
@@ -15,7 +15,7 @@ function PageLayout({ color, logo, head, par, children }) {
       <Footer color={color} to={ref} />
     </>
   );
-}
+};
 
 export default PageLayout;
 const Page = styled.div`

@@ -29,6 +29,7 @@ export default Footer;
 const Container = styled.div`
   background: #161616;
   padding-top: 64px;
+
   padding-bottom: 54px;
   display: flex;
   justify-content: center;
@@ -36,6 +37,9 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 73%;
+  @media (min-width: 992px) {
+    width: 53%;
+  }
   display: flex;
   flex-direction: column;
 `;
