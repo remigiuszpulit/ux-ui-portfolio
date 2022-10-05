@@ -2,17 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 import BackgroundLight from "../static/BackgroundLight.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Loader({ color }) {
   return (
-    <Container>
-      <Ring color={color}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </Ring>
-    </Container>
+    <AnimatePresence>
+      <motion.div
+        key={"loader"}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Container>
+          <Ring color={color}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </Ring>
+        </Container>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

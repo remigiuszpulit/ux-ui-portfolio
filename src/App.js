@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Index = React.lazy(() => import("./pages/index"));
 const Dimark = React.lazy(() => import("./pages/dimark"));
@@ -19,7 +20,16 @@ function App() {
             path="/"
             element={
               <React.Suspense fallback={<Loader color={"#161616"} />}>
-                <Index />
+                <AnimatePresence>
+                  <motion.div
+                    key={"index"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <Index />
+                  </motion.div>
+                </AnimatePresence>
               </React.Suspense>
             }
           />
@@ -27,7 +37,16 @@ function App() {
             path="/dimarkit"
             element={
               <React.Suspense fallback={<Loader color={"#F05A28"} />}>
-                <Dimark />
+                <AnimatePresence>
+                  <motion.div
+                    key={"dimark"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <Dimark />
+                  </motion.div>
+                </AnimatePresence>
               </React.Suspense>
             }
           />
@@ -36,7 +55,16 @@ function App() {
             path="/goldplace"
             element={
               <React.Suspense fallback={<Loader color={"#FFE352"} />}>
-                <Goldplace />
+                <AnimatePresence>
+                  <motion.div
+                    key={"goldplace"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <Goldplace />
+                  </motion.div>
+                </AnimatePresence>
               </React.Suspense>
             }
           />
