@@ -75,7 +75,7 @@ const Container = styled.section`
 const CardsContainer = styled.section`
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 `;
 

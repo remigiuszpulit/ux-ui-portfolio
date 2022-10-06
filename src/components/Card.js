@@ -50,12 +50,30 @@ const Head = styled.h3`
 `;
 
 const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  width: 163px;
+  height: 41px;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: 2px solid #262c30;
+  border-radius: 2px;
+  background-color: #fff;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 0 #262c30;
+  transition: background-color 200ms cubic-bezier(0.637, 0.358, 0.175, 0.878);
+  :hover {
+    box-shadow: none;
+    background-color: #161616;
+    transform: translate(2px, 2px);
+    color: white;
+  }
   font-family: "Kanit";
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  text-decoration-line: underline;
+  font-weight: 600;
+  font-size: 14px;
+
   margin-bottom: 33px;
   /* Black */
 

@@ -1,36 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import avatar from "../static/avatar.svg";
 import LinkedinIcon from "../static/LinkedinIcon.svg";
 import LinkedinIconWhite from "../static/LinkedinIconWhite.svg";
 import "@fontsource/kanit";
 import { Link, useLocation } from "react-router-dom";
+import SideMenu from "./SideMenu";
+import Hamburger from "./Hamburger";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar() {
+  const windowWidth = useWindowSize().width;
+  console.log(windowWidth);
   const location = useLocation();
   const isLight = location.pathname !== "/";
+  const [open, setOpen] = useState(false);
   return (
     <NavContainer isLight={isLight}>
+      {windowWidth <= 992 && (
+        <SideMenu open={open} setOpen={setOpen}>
+          <MenuItem
+            to={"/"}
+            isLight={isLight}
+            isActive={location.pathname === "/"}
+          >
+            Work
+          </MenuItem>
+          <MenuItem isLight={isLight}>About Me</MenuItem>
+          <MenuItem isLight={isLight}>Contact</MenuItem>
+        </SideMenu>
+      )}
+
       <NavWrapper>
         <ItemsWrapper to={"/"}>
           <img src={avatar} alt="Avatar" />
           <LogoText isLight={isLight}>Jagoda Pulit-Pacanowska</LogoText>
         </ItemsWrapper>
-        <ItemsWrapper>
-          <a
-            href="https://www.linkedin.com/in/jagoda-pulit/"
-            target={"_blank"}
-            rel="noreferrer"
-          >
-            <img
-              src={isLight ? LinkedinIconWhite : LinkedinIcon}
-              alt="LinkedinIcon"
-            />
-          </a>
-          <ResumeButton isLight={isLight}>
-            <ResumeButtonText isLight={isLight}>show resume</ResumeButtonText>
-          </ResumeButton>
-        </ItemsWrapper>
+        {windowWidth > 992 ? (
+          <ItemsWrapperNoLink>
+            <MenuItem
+              to={"/"}
+              isLight={isLight}
+              isActive={location.pathname === "/"}
+            >
+              Work
+            </MenuItem>
+            <MenuItem isLight={isLight}>About Me</MenuItem>
+            <MenuItem isLight={isLight}>Contact</MenuItem>
+            <ResumeButton isLight={isLight}>
+              <ResumeButtonText isLight={isLight} id="buttonText">
+                show resume
+              </ResumeButtonText>
+            </ResumeButton>
+          </ItemsWrapperNoLink>
+        ) : (
+          <Hamburger color={"black"} open={open} setOpen={setOpen} />
+        )}
       </NavWrapper>
     </NavContainer>
   );
@@ -39,7 +64,7 @@ function Navbar() {
 export default Navbar;
 
 const NavContainer = styled.nav`
-  height: 105px;
+  height: 75px;
   background: rgba(232, 228, 222, 0.01);
   backdrop-filter: blur(3px);
   position: fixed;
@@ -57,15 +82,15 @@ const NavContainer = styled.nav`
 `;
 
 const NavWrapper = styled.div`
-  width: 73%;
+  width: 83%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   @media (min-width: 768px) {
     justify-content: space-between;
     flex-direction: row;
-    width: 73%;
+    width: 93%;
   }
 `;
 const ItemsWrapper = styled(Link)`
@@ -73,6 +98,37 @@ const ItemsWrapper = styled(Link)`
   align-items: center;
   text-decoration: none;
 `;
+
+const ItemsWrapperNoLink = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const MenuItem = styled(Link)`
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #3c3c3c;
+  ${({ isLight }) =>
+    isLight &&
+    `
+  color: white;
+  `}
+  text-decoration: none;
+  margin-left: 32px;
+  ${({ isActive }) =>
+    isActive &&
+    `
+    color: #161616;
+  font-weight: 500;
+  `}
+  :hover {
+    color: #e5257a;
+  }
+`;
+
 const LogoText = styled.h3`
   margin-left: 16px;
   font-family: "Kanit";
@@ -102,13 +158,19 @@ const ResumeButton = styled.button`
   margin-left: 42px;
   align-items: center;
   padding: 10px;
-  background: #161616;
-  border-radius: 159px;
-  ${({ isLight }) =>
-    isLight &&
-    `
-    background: white;
-  `}
+  border: 2px solid #262c30;
+  border-radius: 2px;
+  transition: background-color 200ms cubic-bezier(0.637, 0.358, 0.175, 0.878);
+  background-color: #fff;
+  box-shadow: 3px 3px 0 0 #262c30;
+  :hover {
+    box-shadow: none;
+    background-color: #161616;
+    transform: translate(2px, 2px);
+    #buttonText {
+      color: white;
+    }
+  }
 `;
 
 const ResumeButtonText = styled.h4`
@@ -117,19 +179,11 @@ const ResumeButtonText = styled.h4`
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  color: #161616;
 
   /* identical to box height */
 
   text-transform: uppercase;
-
-  color: #ffffff;
-
-  /* Inside auto layout */
-  ${({ isLight }) =>
-    isLight &&
-    `
-    color: #161616;
-  `}
 
   flex: none;
   order: 0;
