@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
 import AnimationWrapper from "./components/AnimationWrapper";
 import GlobeWorker from "./pages/globeworker";
+import "@fontsource/kanit";
+import "@fontsource/cabin";
 
 const Index = React.lazy(() => import("./pages/index"));
 const Dimark = React.lazy(() => import("./pages/dimark"));

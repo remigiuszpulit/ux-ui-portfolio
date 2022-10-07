@@ -1252,6 +1252,16 @@
   "resolved" "https://registry.npmjs.org/@fontsource/kanit/-/kanit-4.5.9.tgz"
   "version" "4.5.9"
 
+"@fontsource/lato@^4.5.10":
+  "integrity" "sha512-2hYR6r661Cq9B8zugtu6yxuOKqrVhAgfOSaPSq8XoxbC4ebsl0KOTy/vPoP+9U7JuQVLfrmikirW4a9Z0nDUug=="
+  "resolved" "https://registry.npmjs.org/@fontsource/lato/-/lato-4.5.10.tgz"
+  "version" "4.5.10"
+
+"@fontsource/montserrat@^4.5.13":
+  "integrity" "sha512-/XlcNsMFjdWX4Away8Ax/4NgND8Ckk9gVDwgz1sfxF6h+gFHChLOV0IvPrUfCQjZ1F35igg+nR9bSxmjsYEskQ=="
+  "resolved" "https://registry.npmjs.org/@fontsource/montserrat/-/montserrat-4.5.13.tgz"
+  "version" "4.5.13"
+
 "@humanwhocodes/config-array@^0.10.4":
   "integrity" "sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.10.5.tgz"

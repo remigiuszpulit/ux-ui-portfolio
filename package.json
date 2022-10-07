@@ -5,6 +5,8 @@
   "dependencies": {
     "@fontsource/cabin": "^4.5.7",
     "@fontsource/kanit": "^4.5.9",
+    "@fontsource/lato": "^4.5.10",
+    "@fontsource/montserrat": "^4.5.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",

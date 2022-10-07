@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 182px;
-  height: 336px;
+  height: 350px;
 `;
 const Image = styled.img`
   width: 100%;

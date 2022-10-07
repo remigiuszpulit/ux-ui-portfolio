@@ -12,10 +12,18 @@ import globeworker_storyboard_6 from "../static/globeworker_storyboard_6.png";
 import globeworker_storyboard_7 from "../static/globeworker_storyboard_7.png";
 import globeworker_storyboard_8 from "../static/globeworker_storyboard_8.png";
 import globeworker_storyboard_9 from "../static/globeworker_storyboard_9.png";
+import globeworker_storyboard_graph from "../static/globeworker_storyboard_graph.svg";
+import globeworker_brainstorm_legend from "../static/globeworker_brainstorm_legend.svg";
+import globeworker_brainstorm_1 from "../static/globeworker_brainstorm_1.svg";
+import globeworker_brainstorm_2 from "../static/globeworker_brainstorm_2.svg";
+import globeworker_hifi_1 from "../static/globeworker_hifi_1.svg";
+import globeworker_hifi_2 from "../static/globeworker_hifi_2.svg";
 import PageLayout from "../components/PageLayout";
 import Pill from "../components/dimark/Pill";
 import Heading2 from "../components/Heading2";
 import StoryboardCard from "../components/globeworker/StoryboardCard";
+import "@fontsource/montserrat";
+import "@fontsource/lato";
 
 const headPar =
   "Globeworker was designed as a challenge to put my knowledge about best practicies and methodologies into a life-like example. It’s main goal is to provide backpackers with the opportunity to work while travelling. ";
@@ -56,7 +64,7 @@ function GlobeWorker(props) {
           </ColumnContainer>
         </FlexDateToolsContainer>
       </FlexContainer>
-      <CenterContainer>
+      <CenterContainer style={{ marginBottom: "96px" }}>
         <FlexWrapContainer>
           <Pill
             color={"rgba(0, 147, 149, 0.26)"}
@@ -184,7 +192,7 @@ function GlobeWorker(props) {
       </RegularFlexWrap>
       <Paragraph>After using app::</Paragraph>
       <Paragraph />
-      <RegularFlexWrap>
+      <RegularFlexWrap style={{ marginBottom: "64px" }}>
         <StoryboardCard
           image={globeworker_storyboard_6}
           text={
@@ -210,6 +218,89 @@ function GlobeWorker(props) {
           }
         />
       </RegularFlexWrap>
+      <Heading2 color={"#FFE352"} text={"Modeling"} />
+      <Paragraph>
+        Knowing the needs and concerns of users, I was able to compare them with
+        the business requirements and I was able to consult them on technical
+        possibilities with the team of developers.
+      </Paragraph>
+      <Title3>Brainstorming:</Title3>
+      <Paragraph />
+      <FullWidthImg
+        src={globeworker_brainstorm_legend}
+        style={{ maxWidth: "50%", marginBottom: "64px" }}
+      />
+      <FlexContainer
+        mobileGap={24}
+        gap={54}
+        breakpoint={992}
+        style={{ marginBottom: "64px" }}
+      >
+        <HalfContainer>
+          <FullWidthImg src={globeworker_brainstorm_1} />
+        </HalfContainer>
+        <HalfContainer>
+          <FullWidthImg src={globeworker_brainstorm_2} />
+        </HalfContainer>
+      </FlexContainer>
+      <Title3>Storyboard</Title3>
+      <FullWidthImg
+        src={globeworker_storyboard_graph}
+        style={{ marginBottom: "64px" }}
+      />
+      <Heading2 color={"#FFE352"} text={"Design & Prototyping"} />
+      <Paragraph>
+        Knowing the needs and concerns of users, I was able to compare them with
+        the business requirements and I was able to consult them on technical
+        possibilities with the team of developers.
+      </Paragraph>
+      <Paragraph />
+      <Title3 style={{ marginBottom: "24px" }}>High fidelity wireframes</Title3>
+      <FlexContainer
+        mobileGap={24}
+        gap={54}
+        breakpoint={992}
+        style={{ marginBottom: "64px" }}
+      >
+        <HalfContainer>
+          <FullWidthImg src={globeworker_hifi_1} />
+        </HalfContainer>
+        <HalfContainer>
+          <FullWidthImg src={globeworker_hifi_2} />
+        </HalfContainer>
+      </FlexContainer>
+      <Title3>Design</Title3>
+      <Paragraph>Fonts</Paragraph>
+      <FlexContainer
+        gap={100}
+        mobileGap={0}
+        breakpoint={992}
+        style={{
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          marginBottom: "24px",
+        }}
+      >
+        <Montserrat style={{ width: "88px" }}>Montserrat</Montserrat>
+        <Montserrat style={{ maxWidth: "438px" }}>
+          a ą b c ć d e ę f g h i j k l ł m n ń o ó p r s ś t u w y z ź ż A Ą B
+          C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż 0 1 2 3 4 5
+          6 7 8 9
+        </Montserrat>
+      </FlexContainer>
+      <FlexContainer
+        gap={100}
+        mobileGap={0}
+        breakpoint={992}
+        style={{ justifyContent: "flex-start", alignItems: "flex-start" }}
+      >
+        <Lato style={{ width: "88px" }}>Lato</Lato>
+        <Lato style={{ maxWidth: "438px" }}>
+          a ą b c ć d e ę f g h i j k l ł m n ń o ó p r s ś t u w y z ź ż A Ą B
+          C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż 0 1 2 3 4 5
+          6 7 8 9
+        </Lato>
+      </FlexContainer>
     </PageLayout>
   );
 }
@@ -224,7 +315,6 @@ const ColumnContainer = styled.div`
 const CenterContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 96px;
 `;
 
 const FlexWrapContainer = styled.div`
@@ -346,4 +436,24 @@ const HalfContainer = styled.div`
   @media (min-width: 992px) {
     width: 50%;
   }
+`;
+
+const Montserrat = styled.p`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #1c1c1c;
+`;
+
+const Lato = styled.p`
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #1c1c1c;
 `;
