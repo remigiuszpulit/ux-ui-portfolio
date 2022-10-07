@@ -4,6 +4,7 @@ import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
 import AnimationWrapper from "./components/AnimationWrapper";
+import GlobeWorker from "./pages/globeworker";
 
 const Index = React.lazy(() => import("./pages/index"));
 const Dimark = React.lazy(() => import("./pages/dimark"));
@@ -40,7 +41,6 @@ function App() {
               </AnimationWrapper>
             }
           />
-          <Route path="/ld" element={<Loader color={"#F05A28"} />} />
           <Route
             path="/goldplace"
             element={
@@ -50,6 +50,18 @@ function App() {
                 color={"#FFE352"}
               >
                 <Goldplace />
+              </AnimationWrapper>
+            }
+          />
+          <Route
+            path="/globworker"
+            element={
+              <AnimationWrapper
+                key={"globworker"}
+                loaderKey={"globworkerLoader"}
+                color={"#009395"}
+              >
+                <GlobeWorker />
               </AnimationWrapper>
             }
           />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Hamburger({ color, open, setOpen }) {
   return (
-    <HamburgerWrapper onClick={() => setOpen(!open)}>
+    <HamburgerWrapper onClick={() => setOpen(!open)} open={open}>
       <svg
         width="32"
         height="32"
@@ -27,5 +27,7 @@ export default Hamburger;
 const HamburgerWrapper = styled.button`
   background: none;
   border: none;
+  transform: ${({ open }) => (open ? "rotate(180deg)" : "rotate()")};
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
 `;

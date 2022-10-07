@@ -51,6 +51,14 @@ function Index(props) {
               "The company enables entrepreneurs to lower their administrative costs and run the business more efficiently."
             }
           />
+          <Card
+            img={GoldPlace}
+            head={"Globworker"}
+            to={"/globworker"}
+            text={
+              "The company enables entrepreneurs to lower their administrative costs and run the business more efficiently."
+            }
+          />
         </CardsContainer>
       </Container>
     </Page>
@@ -63,13 +71,16 @@ const Page = styled.div`
   display: flex;
   justify-content: center;
   background-image: url(${Background});
+  background-size: 350px;
+  background-repeat: repeat;
 `;
 
 const Container = styled.section`
-  width: 73%;
-  margin-top: 150px;
+  width: 83%;
+  margin-top: 85px;
   @media (min-width: 768px) {
     margin-top: 105px;
+    width: 73%;
   }
 `;
 const CardsContainer = styled.section`

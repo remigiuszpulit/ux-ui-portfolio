@@ -30,7 +30,7 @@ const Container = styled.div`
   justify-content: center;
 
   background-color: #161616;
-  padding-top: 150px;
+  padding-top: 85px;
   @media (min-width: 768px) {
     padding-top: 105px;
   }

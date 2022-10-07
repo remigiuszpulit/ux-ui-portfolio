@@ -14,15 +14,18 @@ export default SideMenu;
 
 const StyledMenu = styled.nav`
   display: flex;
+  height: 200px;
+  background: rgba(232, 228, 222, 0.95);
+  backdrop-filter: blur(3px);
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: #effffa;
-  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
 
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+  z-index: -400;
   text-align: left;
-  padding: 2rem;
+  padding-top: 45px;
   position: absolute;
   top: 0;
 

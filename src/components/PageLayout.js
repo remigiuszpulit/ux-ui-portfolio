@@ -22,6 +22,8 @@ const Page = styled.div`
   display: flex;
   justify-content: center;
   background-image: url(${BackgroundLight});
+  background-size: 350px;
+  background-repeat: repeat;
 `;
 
 const Container = styled.div`

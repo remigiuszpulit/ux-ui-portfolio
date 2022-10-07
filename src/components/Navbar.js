@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import avatar from "../static/avatar.svg";
-import LinkedinIcon from "../static/LinkedinIcon.svg";
-import LinkedinIconWhite from "../static/LinkedinIconWhite.svg";
 import "@fontsource/kanit";
 import { Link, useLocation } from "react-router-dom";
 import SideMenu from "./SideMenu";
@@ -11,7 +9,6 @@ import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar() {
   const windowWidth = useWindowSize().width;
-  console.log(windowWidth);
   const location = useLocation();
   const isLight = location.pathname !== "/";
   const [open, setOpen] = useState(false);
@@ -21,20 +18,22 @@ function Navbar() {
         <SideMenu open={open} setOpen={setOpen}>
           <MenuItem
             to={"/"}
-            isLight={isLight}
+            isLight={isLight && !open}
             isActive={location.pathname === "/"}
           >
             Work
           </MenuItem>
-          <MenuItem isLight={isLight}>About Me</MenuItem>
-          <MenuItem isLight={isLight}>Contact</MenuItem>
+          <MenuItem isLight={isLight && !open}>About Me</MenuItem>
+          <MenuItem isLight={isLight && !open}>Contact</MenuItem>
         </SideMenu>
       )}
 
       <NavWrapper>
         <ItemsWrapper to={"/"}>
           <img src={avatar} alt="Avatar" />
-          <LogoText isLight={isLight}>Jagoda Pulit-Pacanowska</LogoText>
+          <LogoText isLight={isLight && !open}>
+            Jagoda Pulit-Pacanowska
+          </LogoText>
         </ItemsWrapper>
         {windowWidth > 992 ? (
           <ItemsWrapperNoLink>
@@ -54,7 +53,11 @@ function Navbar() {
             </ResumeButton>
           </ItemsWrapperNoLink>
         ) : (
-          <Hamburger color={"black"} open={open} setOpen={setOpen} />
+          <Hamburger
+            color={isLight && !open ? "white" : "#161616"}
+            open={open}
+            setOpen={setOpen}
+          />
         )}
       </NavWrapper>
     </NavContainer>
@@ -122,7 +125,7 @@ const MenuItem = styled(Link)`
     isActive &&
     `
     color: #161616;
-  font-weight: 500;
+  font-weight: 600;
   `}
   :hover {
     color: #e5257a;
@@ -137,7 +140,7 @@ const LogoText = styled.h3`
   font-weight: 500;
   font-size: 16px;
   @media (min-width: 768px) {
-    font-size: 24px;
+    font-size: 20px;
   }
   line-height: 124%;
   color: #161616;

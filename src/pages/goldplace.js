@@ -39,7 +39,7 @@ function Goldplace(props) {
       head={"Gold Place"}
       par={headPar}
     >
-      <FlexContainer gap={146} breakpoint={992}>
+      <FlexContainer gap={246} breakpoint={992}>
         <ColumnContainer>
           <Title3 style={{ marginBottom: "24px" }}>
             My role - UX/UI Designer
@@ -222,18 +222,6 @@ export default Goldplace;
 const ColumnContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const FlexRowContainer = styled.div`
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  ${({ gap, mobileGap }) =>
-    `gap: ${mobileGap}px;
-    @media (min-width: 992px) {
-    gap: ${gap}px;
-  }
-  `}
 `;
 
 const CenterContainer = styled.div`
