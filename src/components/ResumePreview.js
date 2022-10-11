@@ -40,7 +40,6 @@ const StyledModal = styled(Modal)`
   right: 0;
   padding: 10px;
   background: white;
-
   backdrop-filter: blur(3px);
   border: 2px solid #161616;
   box-shadow: 3px 3px 0 0 #262c30;

@@ -12,6 +12,11 @@ import globeworker_storyboard_6 from "../static/globeworker_storyboard_6.png";
 import globeworker_storyboard_7 from "../static/globeworker_storyboard_7.png";
 import globeworker_storyboard_8 from "../static/globeworker_storyboard_8.png";
 import globeworker_storyboard_9 from "../static/globeworker_storyboard_9.png";
+import globeworker_desktop_1 from "../static/globeworker_desktop_1.png";
+import globeworker_desktop_2 from "../static/globeworker_desktop_2.png";
+import globeworker_desktop_3 from "../static/globeworker_desktop_3.png";
+import globeworker_desktop_4 from "../static/globeworker_desktop_4.png";
+import globeworker_desktop_5 from "../static/globeworker_desktop_5.png";
 import globeworker_storyboard_graph from "../static/globeworker_storyboard_graph.svg";
 import globeworker_brainstorm_legend from "../static/globeworker_brainstorm_legend.svg";
 import globeworker_brainstorm_1 from "../static/globeworker_brainstorm_1.svg";
@@ -24,6 +29,7 @@ import Heading2 from "../components/Heading2";
 import StoryboardCard from "../components/globeworker/StoryboardCard";
 import "@fontsource/montserrat";
 import "@fontsource/lato";
+import ColorPill from "../components/globeworker/ColorPill";
 
 const headPar =
   "Globeworker was designed as a challenge to put my knowledge about best practicies and methodologies into a life-like example. It’s main goal is to provide backpackers with the opportunity to work while travelling. ";
@@ -301,6 +307,38 @@ function GlobeWorker(props) {
           6 7 8 9
         </Lato>
       </FlexContainer>
+      <Title3 style={{ marginBottom: "24px" }}>Colors</Title3>
+      <FlexWrapContainer style={{ marginBottom: "64px" }}>
+        <ColorPill color={"#015C5D"} name={"#015C5D"} />
+        <ColorPill color={"#C9DCDC"} name={"#C9DCDC"} />
+        <ColorPill color={"#732602"} name={"#732602"} />
+        <ColorPill color={"#BF3D00"} name={"#BF3D00"} />
+      </FlexWrapContainer>
+      <FullWidthImg
+        style={{ marginBottom: "24px" }}
+        src={globeworker_desktop_1}
+      />
+      <FlexContainer
+        mobileGap={24}
+        gap={54}
+        breakpoint={992}
+        style={{ marginBottom: "24px" }}
+      >
+        <HalfContainer>
+          <FullWidthImg src={globeworker_desktop_2} />
+        </HalfContainer>
+        <HalfContainer>
+          <FullWidthImg src={globeworker_desktop_3} />
+        </HalfContainer>
+      </FlexContainer>
+      <FullWidthImg
+        style={{ marginBottom: "24px" }}
+        src={globeworker_desktop_4}
+      />
+      <FullWidthImg
+        style={{ marginBottom: "24px" }}
+        src={globeworker_desktop_5}
+      />
     </PageLayout>
   );
 }

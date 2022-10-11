@@ -57,7 +57,7 @@ function Index(props) {
             head={"Globworker"}
             to={"/globworker"}
             text={
-              "The company enables entrepreneurs to lower their administrative costs and run the business more efficiently."
+              "Globeworker was designed as a challenge to put my knowledge about best practicies and methodologies into a life-like example. It’s main goal is to provide backpackers with the opportunity to work while travelling."
             }
           />
         </CardsContainer>
