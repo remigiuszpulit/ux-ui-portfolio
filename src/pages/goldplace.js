@@ -332,6 +332,9 @@ const Paragraph = styled.p`
   font-size: 16px;
   line-height: 24px;
   /* or 150% */
+  @media (min-width: 768px) {
+    width: 80%;
+  }
 
   color: #1c1c1c;
 `;

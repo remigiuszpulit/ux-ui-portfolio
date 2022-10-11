@@ -421,6 +421,10 @@ const Paragraph = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
   line-height: 24px;
   /* or 150% */
 

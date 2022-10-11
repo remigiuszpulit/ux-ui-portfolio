@@ -33,6 +33,7 @@ function Index(props) {
             <Text> based in Krakow.</Text>
           </HeroText>
         </Head>
+
         <CardsContainer>
           <Card
             img={DimarkCover}

@@ -6,12 +6,14 @@ import { Link, useLocation } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import Hamburger from "./Hamburger";
 import useWindowSize from "../hooks/useWindowSize";
+import ResumePreview from "./ResumePreview";
 
 function Navbar() {
   const windowWidth = useWindowSize().width;
   const location = useLocation();
   const isLight = location.pathname !== "/";
   const [open, setOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <NavContainer isLight={isLight}>
       {windowWidth <= 992 && (
@@ -28,6 +30,7 @@ function Navbar() {
         </SideMenu>
       )}
 
+      <ResumePreview isOpen={isModalOpen} setOpen={setModalOpen} />
       <NavWrapper>
         <ItemsWrapper to={"/"}>
           <img src={avatar} alt="Avatar" />
@@ -46,7 +49,7 @@ function Navbar() {
             </MenuItem>
             <MenuItem isLight={isLight}>About Me</MenuItem>
             <MenuItem isLight={isLight}>Contact</MenuItem>
-            <ResumeButton isLight={isLight}>
+            <ResumeButton onClick={() => setModalOpen(true)} isLight={isLight}>
               <ResumeButtonText isLight={isLight} id="buttonText">
                 show resume
               </ResumeButtonText>
