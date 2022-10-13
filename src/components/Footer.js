@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ArrowUp from "./ArrowUp";
 
 function Footer({ color, to }) {
-  console.log(to);
   return (
     <Container>
       <Wrapper>

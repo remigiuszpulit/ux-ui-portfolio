@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import BackgroundLight from "../static/BackgroundLight.png";
 import PageHead from "../components/PageHead";
 import Footer from "./Footer";
 
 const PageLayout = ({ color, logo, head, par, children }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const ref = useRef(null);
   return (
     <>

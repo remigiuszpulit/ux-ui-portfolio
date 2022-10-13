@@ -12,7 +12,7 @@ const PageHead = React.forwardRef(({ color, logo, head, par }, ref) => (
       </BackLink>
       <HeadContainer>
         <HeadWrapper>
-          <ImageContainer src={logo} />
+          {logo && <ImageContainer src={logo} />}
           <TextContainer>
             <HeadText>{head}</HeadText>
             <HeadPar>{par}</HeadPar>

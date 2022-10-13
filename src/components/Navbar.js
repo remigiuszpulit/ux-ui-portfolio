@@ -26,7 +26,13 @@ function Navbar() {
             Work
           </MenuItem>
           <MenuItem isLight={isLight && !open}>About Me</MenuItem>
-          <MenuItem isLight={isLight && !open}>Contact</MenuItem>
+          <MenuItem
+            to={"/contact"}
+            isActive={location.pathname === "/contact"}
+            isLight={isLight && !open}
+          >
+            Contact
+          </MenuItem>
         </SideMenu>
       )}
 
@@ -48,7 +54,13 @@ function Navbar() {
               Work
             </MenuItem>
             <MenuItem isLight={isLight}>About Me</MenuItem>
-            <MenuItem isLight={isLight}>Contact</MenuItem>
+            <MenuItem
+              to={"/contact"}
+              isActive={location.pathname === "/contact"}
+              isLight={isLight}
+            >
+              Contact
+            </MenuItem>
             <ResumeButton onClick={() => setModalOpen(true)} isLight={isLight}>
               <ResumeButtonText isLight={isLight} id="buttonText">
                 show resume
