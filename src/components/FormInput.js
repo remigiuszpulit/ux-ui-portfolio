@@ -43,15 +43,32 @@ const Container = styled.div`
 `;
 
 const StyledInput = styled.input`
-  border: 2px solid #262c30;
-  width: 50%;
-  height: 42px;
-`;
-const StyledArea = styled.textarea`
+  outline: none;
+  padding-left: 10px;
   border: 2px solid #262c30;
   width: 100%;
+  margin-bottom: 8px;
+  height: 34px;
+  @media (min-width: 992px) {
+    width: 50%;
+    height: 42px;
+  }
+  transition: ease-in-out 0.1s;
+  :focus-visible {
+    border: 2px solid #e5257a;
+  }
+`;
+const StyledArea = styled.textarea`
+  outline: none;
+  border: 2px solid #262c30;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
   height: 242px;
   resize: none;
+  :focus-visible {
+    border: 2px solid #e5257a;
+  }
 `;
 
 const Name = styled.label`

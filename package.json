@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@fontsource/cabin": "^4.5.7",
     "@fontsource/kanit": "^4.5.9",
     "@fontsource/lato": "^4.5.10",
