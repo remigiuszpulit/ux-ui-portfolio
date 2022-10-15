@@ -22,7 +22,11 @@ function Contact() {
   function reducer(state, action) {
     switch (action.type) {
       case "activateSuccess":
-        return { ...state, isActive: true };
+        return {
+          message: "Your message has been sent successfully!",
+          isActive: true,
+          isError: false,
+        };
       case "activateError":
         return {
           message: "Ooops! Something went wrong",
@@ -40,19 +44,22 @@ function Contact() {
 
   const [snackbarState, dispatch] = useReducer(reducer, InitialSnackbarState);
 
+  const closeSnackbar = () => dispatch({ type: "deactivate" });
+
   const onSubmit = (data) => {
-    dispatch({ type: "activateSuccess" });
-    setTimeout(() => dispatch({ type: "deactivate" }), 5000);
-    // emailjs
-    //   .send("service_3pyaebb", "template_bn36y5b", data, "J46SM3IlR0HoeME9X")
-    //   .then(
-    //     (result) => {
-    //       setDisabled(true);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+    emailjs
+      .send("service_3pyaebb", "template_bn36y5b", data, "J46SM3IlR0HoeME9X")
+      .then(
+        (result) => {
+          setDisabled(true);
+          dispatch({ type: "activateSuccess" });
+          setTimeout(() => dispatch({ type: "deactivate" }), 5000);
+        },
+        (error) => {
+          dispatch({ type: "activateError" });
+          setTimeout(() => dispatch({ type: "deactivate" }), 5000);
+        }
+      );
   };
   return (
     <>
@@ -106,6 +113,7 @@ function Contact() {
         isError={snackbarState.isError}
         isActive={snackbarState.isActive}
         message={snackbarState.message}
+        closefn={closeSnackbar}
       />
     </>
   );
