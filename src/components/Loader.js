@@ -11,7 +11,6 @@ function Loader({ color }) {
         key={"loader"}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
       >
         <Container>
           <Ring color={color}>

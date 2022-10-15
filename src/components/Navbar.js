@@ -61,10 +61,8 @@ function Navbar() {
             >
               Contact
             </MenuItem>
-            <ResumeButton onClick={() => setModalOpen(true)} isLight={isLight}>
-              <ResumeButtonText isLight={isLight} id="buttonText">
-                show resume
-              </ResumeButtonText>
+            <ResumeButton onClick={() => setModalOpen(true)}>
+              <ResumeButtonText id="buttonText">show resume</ResumeButtonText>
             </ResumeButton>
           </ItemsWrapperNoLink>
         ) : (

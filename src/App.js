@@ -1,19 +1,18 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
 import AnimationWrapper from "./components/AnimationWrapper";
-import GlobeWorker from "./pages/globeworker";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import "@fontsource/kanit";
 import "@fontsource/cabin";
-import Contact from "./pages/contact";
 
 const Index = React.lazy(() => import("./pages/index"));
 const Dimark = React.lazy(() => import("./pages/dimark"));
 const Goldplace = React.lazy(() => import("./pages/goldplace"));
+const GlobeWorker = React.lazy(() => import("./pages/globeworker"));
+const Contact = React.lazy(() => import("./pages/contact"));
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -39,7 +38,7 @@ function App() {
             path="/"
             element={
               <AnimationWrapper
-                key={"index"}
+                compKey={"index"}
                 loaderKey={"indexLoader"}
                 color={"#161616"}
               >
@@ -51,7 +50,7 @@ function App() {
             path="/dimarkit"
             element={
               <AnimationWrapper
-                key={"dimark"}
+                compKey={"dimark"}
                 loaderKey={"dimarkloader"}
                 color={"#F05A28"}
               >
@@ -63,7 +62,7 @@ function App() {
             path="/goldplace"
             element={
               <AnimationWrapper
-                key={"dimark"}
+                compKey={"dimark"}
                 loaderKey={"dimarkloader"}
                 color={"#FFE352"}
               >
@@ -75,7 +74,7 @@ function App() {
             path="/globworker"
             element={
               <AnimationWrapper
-                key={"globworker"}
+                compKey={"globworker"}
                 loaderKey={"globworkerLoader"}
                 color={"#009395"}
               >
@@ -87,7 +86,7 @@ function App() {
             path="/contact"
             element={
               <AnimationWrapper
-                key={"contact"}
+                compKey={"contact"}
                 loaderKey={"contactLoader"}
                 color={"#161616"}
               >
