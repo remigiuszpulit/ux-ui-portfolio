@@ -25,7 +25,7 @@ function Navbar() {
           >
             Work
           </MenuItem>
-          <MenuItem isLight={isLight && !open}>About Me</MenuItem>
+          {/* <MenuItem isLight={isLight && !open}>About Me</MenuItem> */}
           <MenuItem
             to={"/contact"}
             isActive={location.pathname === "/contact"}
@@ -53,7 +53,7 @@ function Navbar() {
             >
               Work
             </MenuItem>
-            <MenuItem isLight={isLight}>About Me</MenuItem>
+            {/* <MenuItem isLight={isLight}>About Me</MenuItem> */}
             <MenuItem
               to={"/contact"}
               isActive={location.pathname === "/contact"}

@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function Card({ head, text, img, to }) {
+function Card({ head, text, img, to, hidebtn }) {
   return (
     <Container>
       <Img src={img} alt={`${head}-cover`} />
       <TextContainer>
         <Head>{head}</Head>
         <Text>{text}</Text>
-        <StyledLink to={to}> View Project </StyledLink>
+        {!hidebtn && <StyledLink to={to}> View Project </StyledLink>}
       </TextContainer>
     </Container>
   );
@@ -19,7 +19,7 @@ export default Card;
 
 const Container = styled.div`
   width: fit-content;
-  height: fit-content;
+  height: 550px;
   @media (min-width: 1100px) {
     width: 450px;
   }
@@ -32,6 +32,8 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  height: 240px;
+  object-fit: cover;
 `;
 const TextContainer = styled.div`
   display: flex;

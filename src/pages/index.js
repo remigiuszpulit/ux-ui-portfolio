@@ -3,7 +3,9 @@ import styled from "styled-components";
 import "@fontsource/cabin";
 import ReactTypingEffect from "react-typing-effect";
 import GoldPlace from "../static/GoldPlace.png";
+import GlobWorker from "../static/GlobWorker.png";
 import DimarkCover from "../static/DimarkCover.png";
+import nask from "../static/nask.png";
 import Background from "../static/Background.png";
 import Card from "../components/Card";
 
@@ -53,12 +55,19 @@ function Index(props) {
             }
           />
           <Card
-            img={GoldPlace}
+            img={GlobWorker}
             head={"Globworker"}
             to={"/globworker"}
             text={
               "Globeworker was designed as a challenge to put my knowledge about best practicies and methodologies into a life-like example. It’s main goal is to provide backpackers with the opportunity to work while travelling."
             }
+          />
+          <Card
+            img={nask}
+            head={"Nask"}
+            hidebtn={true}
+            to={"/globworker"}
+            text={"Coming soon..."}
           />
         </CardsContainer>
       </Container>
