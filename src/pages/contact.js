@@ -47,6 +47,7 @@ function Contact() {
   const closeSnackbar = () => dispatch({ type: "deactivate" });
 
   const onSubmit = (data) => {
+    setDisabled(true);
     emailjs
       .send("service_3pyaebb", "template_bn36y5b", data, "J46SM3IlR0HoeME9X")
       .then(

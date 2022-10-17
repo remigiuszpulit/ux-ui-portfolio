@@ -64,7 +64,7 @@ function Index(props) {
           />
           <Card
             img={nask}
-            head={"Nask"}
+            head={"NASK"}
             hidebtn={true}
             to={"/globworker"}
             text={"Coming soon..."}
