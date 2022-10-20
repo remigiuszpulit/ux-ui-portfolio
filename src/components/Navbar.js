@@ -11,7 +11,7 @@ import ResumePreview from "./ResumePreview";
 function Navbar() {
   const windowWidth = useWindowSize().width;
   const location = useLocation();
-  const isLight = location.pathname !== "/";
+  const isLight = location.pathname !== "/" && location.pathname !== "/contact";
   const [open, setOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
   return (

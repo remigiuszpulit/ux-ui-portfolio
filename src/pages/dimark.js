@@ -153,7 +153,10 @@ function Dimark() {
         </FlexRowContainer>
       </FlexContainer>
       <Title3 style={{ marginBottom: "14px" }}>User story map: Employee</Title3>
-      <FullWidthImg src={dimark_storymap_employee} />
+      <FullWidthImg
+        src={dimark_storymap_employee}
+        style={{ marginBottom: "94px" }}
+      />
       <Title3 style={{ marginBottom: "14px" }}>
         User story map: Shift Manager
       </Title3>
@@ -306,7 +309,7 @@ function Dimark() {
         instructions displayed on a tablet.
       </Paragraph>
       <Title3 style={{ marginBottom: "24px" }}>Report Generation</Title3>
-      <Paragraph>
+      <Paragraph style={{ marginBottom: "64px" }}>
         Together with the team I have focused on providing the end user with
         possibly the largest freedom of choosing the data to be presented on the
         report as well as the filtering criteria. Based on the gathered data and
