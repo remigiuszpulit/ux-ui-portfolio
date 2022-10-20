@@ -6,14 +6,13 @@ import { Link, useLocation } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import Hamburger from "./Hamburger";
 import useWindowSize from "../hooks/useWindowSize";
-import ResumePreview from "./ResumePreview";
+import Jagoda_Pulit_CV from "../static/Jagoda_Pulit_CV.pdf";
 
 function Navbar() {
   const windowWidth = useWindowSize().width;
   const location = useLocation();
   const isLight = location.pathname !== "/" && location.pathname !== "/contact";
   const [open, setOpen] = useState(false);
-  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <NavContainer isLight={isLight}>
       {windowWidth <= 992 && (
@@ -36,7 +35,6 @@ function Navbar() {
         </SideMenu>
       )}
 
-      <ResumePreview isOpen={isModalOpen} setOpen={setModalOpen} />
       <NavWrapper>
         <ItemsWrapper to={"/"}>
           <img src={avatar} alt="Avatar" />
@@ -61,7 +59,7 @@ function Navbar() {
             >
               Contact
             </MenuItem>
-            <ResumeButton onClick={() => setModalOpen(true)}>
+            <ResumeButton href={Jagoda_Pulit_CV} target={"_blank"}>
               <ResumeButtonText id="buttonText">show resume</ResumeButtonText>
             </ResumeButton>
           </ItemsWrapperNoLink>
@@ -165,7 +163,7 @@ const LogoText = styled.h3`
   `}
 `;
 
-const ResumeButton = styled.button`
+const ResumeButton = styled.a`
   display: flex;
   flex-direction: row;
   width: 163px;
@@ -173,7 +171,7 @@ const ResumeButton = styled.button`
   justify-content: center;
   margin-left: 42px;
   align-items: center;
-  padding: 10px;
+  text-decoration: none;
   border: 2px solid #262c30;
   border-radius: 2px;
   transition: background-color 200ms cubic-bezier(0.637, 0.358, 0.175, 0.878);
