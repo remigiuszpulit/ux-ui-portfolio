@@ -2,9 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function Card({ head, text, img, to, hidebtn }) {
-  return (
-    <Container>
+function Card({ head, text, img, to, hidebtn, inactive }) {
+  return inactive ? (
+    <ContainerInactive>
+      <Img src={img} alt={`${head}-cover`} />
+      <TextContainer>
+        <Head>{head}</Head>
+        <Text>{text}</Text>
+        {!hidebtn && <StyledLink to={to}> View Project </StyledLink>}
+      </TextContainer>
+    </ContainerInactive>
+  ) : (
+    <Container to={to}>
       <Img src={img} alt={`${head}-cover`} />
       <TextContainer>
         <Head>{head}</Head>
@@ -17,17 +26,50 @@ function Card({ head, text, img, to, hidebtn }) {
 
 export default Card;
 
-const Container = styled.div`
+const Container = styled(Link)`
   width: fit-content;
   height: 550px;
+  /* box-sizing: content-box; */
+  text-decoration: none;
+
   @media (min-width: 1100px) {
     width: 450px;
   }
   background: #ffffff;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid transparent;
+  transition: all 50ms ease-in;
+  :hover {
+    box-shadow: 3px 3px 0 0 #262c30;
+
+    border: 2px solid #262c30;
+    border-radius: 2px;
+    /* width: calc(450px - 5px);
+    height: calc(550px - 5px); */
+    /* background-color: #161616; */
+    transform: translate(-3px, -3px);
+  }
+`;
+
+const ContainerInactive = styled.div`
+  width: fit-content;
+  height: 550px;
+  /* box-sizing: content-box; */
+  text-decoration: none;
+
+  @media (min-width: 1100px) {
+    width: 450px;
+  }
+  background: #ffffff;
+  /* margin-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: all 50ms ease-in;
 `;
 
 const Img = styled.img`
@@ -85,6 +127,7 @@ const StyledLink = styled(Link)`
 const Text = styled.p`
   font-family: "Cabin";
   font-style: normal;
+  height: 92px;
   font-weight: 400;
   font-size: 16px;
   color: #1c1c1c;

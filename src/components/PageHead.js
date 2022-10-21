@@ -46,6 +46,7 @@ const Wrapper = styled.div`
 const BackLink = styled(Link)`
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const BackLinkText = styled.span`
@@ -56,6 +57,7 @@ const BackLinkText = styled.span`
   line-height: 24px;
   text-decoration: none;
   margin-left: 13px;
+
   /* identical to box height */
 
   color: #ffffff;

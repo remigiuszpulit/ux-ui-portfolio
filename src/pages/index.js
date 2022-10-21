@@ -54,6 +54,7 @@ function Index(props) {
               "The company enables entrepreneurs to lower their administrative costs and run the business more efficiently."
             }
           />
+
           <Card
             img={GlobWorker}
             head={"Globworker"}
@@ -66,7 +67,8 @@ function Index(props) {
             img={nask}
             head={"NASK"}
             hidebtn={true}
-            to={"/globworker"}
+            to={"/"}
+            inactive
             text={"Coming soon..."}
           />
         </CardsContainer>
@@ -97,6 +99,7 @@ const CardsContainer = styled.section`
   display: flex;
   justify-content: center;
   gap: 30px;
+  padding-bottom: 50px;
   flex-wrap: wrap;
 `;
 
