@@ -362,6 +362,8 @@ const FlexWrapContainer = styled.div`
   justify-content: center;
   @media (min-width: 992px) {
     gap: 52px;
+    width: 120%;
+    flex-wrap: nowrap;
     justify-content: flex-start;
   }
 `;

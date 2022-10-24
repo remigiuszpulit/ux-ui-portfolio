@@ -16,6 +16,7 @@ export default ActorCard;
 const Container = styled.div`
   display: flex;
   width: 181px;
+  height: 256px;
   flex-direction: column;
 `;
 

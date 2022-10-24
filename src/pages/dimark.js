@@ -115,11 +115,11 @@ function Dimark() {
       <Title3>Actors:</Title3>
       <FlexContainer
         style={{ paddingTop: "25px" }}
-        gap={82}
+        gap={48}
         mobileGap={20}
         breakpoint={1300}
       >
-        <FlexRowContainer gap={82} mobileGap={20}>
+        <FlexRowContainer gap={48} mobileGap={20}>
           <ActorCard
             icon={dimark_actors_managers}
             title={"Shift Managers"}
@@ -135,7 +135,7 @@ function Dimark() {
             }
           />
         </FlexRowContainer>
-        <FlexRowContainer gap={82} mobileGap={20}>
+        <FlexRowContainer gap={48} mobileGap={20}>
           <ActorCard
             icon={dimark_actors_app}
             title={"Application"}
@@ -254,7 +254,7 @@ function Dimark() {
         style={{ marginBottom: "64px" }}
       >
         <Icon src={dimark_actors_airport} />
-        <Paragraph style={{ marginLeft: "13px" }}>
+        <Paragraph>
           Access to the history of malfunctions and service tasks in order to
           monitor the quality of supplied devices. Simplifying the communication
           in case of warranty repairs.
@@ -293,12 +293,18 @@ function Dimark() {
       />
       <FlexContainer
         breakpoint={1200}
-        gap={143}
+        gap={48}
         mobileGap={64}
         style={{ marginBottom: "94px" }}
       >
-        <FullWidthImg src={dimark_usecases_1} style={{ maxWidth: "444px" }} />
-        <FullWidthImg src={dimark_usecases_2} style={{ maxWidth: "444px" }} />
+        <FullWidthImg
+          src={dimark_usecases_1}
+          style={{ maxWidth: "444px", height: "520px" }}
+        />
+        <FullWidthImg
+          src={dimark_usecases_2}
+          style={{ maxWidth: "444px", height: "520px" }}
+        />
       </FlexContainer>
       <Heading2 color={"rgba(255, 64, 0, 0.56)"} text={"Prototyping"} />
       <Paragraph style={{ marginBottom: "64px" }}>
@@ -442,6 +448,8 @@ const FlexWrapContainer = styled.div`
 
   @media (min-width: 992px) {
     gap: 52px;
+    width: 120%;
+    flex-wrap: nowrap;
     justify-content: flex-start;
   }
 `;
@@ -544,7 +552,7 @@ const SmallImg = styled.img`
 
 const Icon = styled.img`
   width: 68px;
-  height: auto;
+  height: 49px;
 `;
 
 const HalfContainer = styled.div`
