@@ -6,6 +6,7 @@ import GoldPlace from "../static/GoldPlace.png";
 import GlobWorker from "../static/GlobWorker.png";
 import DimarkCover from "../static/DimarkCover.png";
 import nask from "../static/nask.png";
+import railwaymen from "../static/railwaymen.png";
 import Background from "../static/Background.png";
 import Card from "../components/Card";
 
@@ -66,6 +67,14 @@ function Index(props) {
           <Card
             img={nask}
             head={"NASK"}
+            hidebtn={true}
+            to={"/"}
+            inactive
+            text={"Coming soon..."}
+          />
+          <Card
+            img={railwaymen}
+            head={"Railwaymen"}
             hidebtn={true}
             to={"/"}
             inactive
